@@ -1,0 +1,320 @@
+@import '~@fortawesome/fontawesome-free/css/all.css';
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+@keyframes slideIn {
+  from {
+      transform: translateY(-50px);
+      opacity: 0;
+  }
+  to {
+      transform: translateY(0);
+      opacity: 1;
+  }
+}
+
+.lobby-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-image: url('images/back.jpg'); /* Replace 'your-background-image-url.jpg' with your image URL */
+  background-size: cover;
+  background-position: center;
+  animation: slideIn 0.5s ease; /* Apply slideIn animation */
+}
+
+.sticker{
+  width: 20%;
+  height: auto;
+  margin-left: 40%;
+  
+}
+
+.lobby-title {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1; /* Ensure it's above the image */
+  color: white; /* Set text color */
+  font-size: 2rem; /* Set font size */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add text shadow */
+  margin-left: 20%;
+}
+
+.lobby-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: slideIn 0.5s ease; /* Apply slideIn animation */
+  margin-left: 40%;
+}
+
+.lobby-label {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #fff; /* Set text color to white for better visibility */
+}
+
+
+
+.lobby-input {
+  width: 300px; /* Adjust the width as needed */
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc; /* Set your desired border color */
+  border-radius: 5px;
+  transition: border-color 0.3s ease; /* Add smooth transition */
+}
+
+.lobby-input:hover {
+  border-color: #007bff; /* Change border color on hover */
+}
+
+.lobby-button {
+  padding: 0.5rem 2rem;
+  background-color: #2d2c5e; /* Set your desired button color */
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease; /* Add smooth transition */
+}
+
+.lobby-button:hover {
+  background-color: #0056b3; /* Set your desired button hover color */
+}
+
+/* Add this to your CSS file */
+.connected-animation {
+  /* Add your animation properties for the "Connected" state */
+  animation-name: connected-animation;
+  animation-duration: 1s;
+  /* Add any other animation properties as needed */
+}
+
+.no-one-animation {
+  /* Add your animation properties for the "No one in the room" state */
+  animation-name: no-one-animation;
+  animation-duration: 1s;
+  /* Add any other animation properties as needed */
+}
+
+@keyframes connected-animation {
+  /* Define your animation keyframes for the "Connected" state */
+  from {
+    /* Initial styles */
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  to {
+    /* Final styles */
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes no-one-animation {
+  /* Define your animation keyframes for the "No one in the room" state */
+  from {
+    /* Initial styles */
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    /* Final styles */
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+.room-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-image: url('images/bg2.jpg');
+}
+
+.room-header {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.room-actions {
+  margin-bottom: 20px;
+}
+
+.video-container {
+  display: flex;
+  justify-content: center;
+}
+
+.video-box {
+  margin: 0 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: #fff;
+}
+
+.video-box h2 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.video-box > div {
+  margin-top: 10px;
+}
+
+
+.room-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.send-stream-button,
+.call-button {
+  padding: 12px 24px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  margin-right: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.send-stream-button:hover,
+.call-button:hover {
+  background-color: #0056b3;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+}
+
+.control-button {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  margin-right: 10px;
+  margin-top: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.control-button:hover {
+  background-color: #45a049;
+}
+
+.end-call-button {
+  padding: 10px 20px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  margin-right: 10px;
+  margin-top: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.end-call-button:hover {
+  background-color: #d32f2f;
+}
+
+.waiting-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  background-color: #809bce; /* Yellow background color */
+  border-radius: 10px;
+  padding: 20px;
+  animation: fadeIn 1s ease; /* Fade-in animation */
+}
+
+.waiting-icon {
+  width: 100px; /* Adjust the size of the icon */
+  height: auto;
+  margin-bottom: 20px; /* Add some spacing between the icon and the text */
+}
+
+.waiting-box p {
+  font-size: 24px;
+  color: #ffffff; /* White text color */
+  text-align: center;
+  animation: slideIn 1s ease; /* Slide-in animation */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-50px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
